@@ -8,12 +8,17 @@ class Overworld {
 
     startGameLoop() {
         const step = () => {
+            //Clear off the canvas
+            this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
             //Draw Lower layer
             this.map.drawLowerImage(this.ctx);
 
             //Draw Game Objects
             Object.values(this.map.gameObject).forEach(object => {
+                object.update({
+                    
+                });
                 object.sprite.draw(this.ctx);
             });
             
